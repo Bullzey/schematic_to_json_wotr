@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockWeights
+0,wotr:processor_block_4,"{""minecraft:cobbled_deepslate"": 0.2, ""minecraft:tuff"": 0.4, ""minecraft:deepslate"": 0.2, ""minecraft:bedrock"": 0.2}"
+1,wotr:processor_block_4_directional_pillar,"{""minecraft:deepslate"": 0.5, ""minecraft:bedrock"": 0.5}"
+2,wotr:processor_block_4_slab,"{""minecraft:tuff_slab"": 0.5, ""minecraft:bedrock"": 0.5}"
+3,wotr:processor_block_4_stairs,"{""minecraft:tuff_stairs"": 0.5, ""minecraft:bedrock"": 0.5}"
+4,wotr:processor_block_4_wall,"{""minecraft:tuff_wall"": 0.5, ""minecraft:bedrock"": 0.5}"
+5,wotr:processor_block_4_button,"{""minecraft:warped_button"": 0.5, ""minecraft:bedrock"": 0.5}"
+6,wotr:processor_block_4_pressure_plate,"{""minecraft:warped_pressure_plate"": 0.5, ""minecraft:bedrock"": 0.5}"
+7,wotr:processor_block_4_fence,"{""minecraft:warped_fence"": 0.5, ""minecraft:bedrock"": 0.5}"
+8,wotr:processor_block_4_fence_gate,"{""minecraft:warped_fence_gate"": 0.5, ""minecraft:bedrock"": 0.5}"
+9,wotr:processor_block_4_glass_pane,"{""minecraft:iron_bars"": 0.5, ""minecraft:bedrock"": 0.5}"
+10,wotr:processor_block_4_door,"{""minecraft:warped_door"": 0.5, ""minecraft:bedrock"": 0.25, ""minecraft:oak_door"": 0.25}"
+11,wotr:processor_block_4_trapdoor,"{""minecraft:warped_trapdoor"": 0.333, ""minecraft:bedrock"": 0.667}"

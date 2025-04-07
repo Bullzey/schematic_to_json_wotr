@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockCounts
+0,wotr:processor_block_7,"{""minecraft:bricks"": 1, ""minecraft:cracked_stone_bricks"": 1, ""minecraft:bedrock"": 1}"
+1,wotr:processor_block_7_directional_pillar,"{""minecraft:chiseled_stone_bricks"": 1, ""minecraft:bedrock"": 1}"
+2,wotr:processor_block_7_slab,"{""minecraft:brick_slab"": 1, ""minecraft:bedrock"": 1}"
+3,wotr:processor_block_7_stairs,"{""minecraft:brick_stairs"": 1, ""minecraft:bedrock"": 1}"
+4,wotr:processor_block_7_wall,"{""minecraft:brick_wall"": 1, ""minecraft:stone_brick_wall"": 1, ""minecraft:bedrock"": 1}"
+5,wotr:processor_block_7_button,"{""minecraft:stone_button"": 1, ""minecraft:bedrock"": 1}"
+6,wotr:processor_block_7_pressure_plate,"{""minecraft:stone_pressure_plate"": 1, ""minecraft:bedrock"": 1}"
+7,wotr:processor_block_7_fence,"{""minecraft:pale_oak_fence"": 1, ""minecraft:bedrock"": 1}"
+8,wotr:processor_block_7_fence_gate,"{""minecraft:pale_oak_fence_gate"": 1, ""minecraft:bedrock"": 1}"
+9,wotr:processor_block_7_glass_pane,"{""minecraft:iron_bars"": 1, ""minecraft:bedrock"": 1}"
+10,wotr:processor_block_7_door,"{""minecraft:waxed_weathered_copper_door"": 2, ""minecraft:bedrock"": 1, ""minecraft:oak_door"": 1}"
+11,wotr:processor_block_7_trapdoor,"{""minecraft:waxed_weathered_copper_trapdoor"": 1, ""minecraft:bedrock"": 2}"

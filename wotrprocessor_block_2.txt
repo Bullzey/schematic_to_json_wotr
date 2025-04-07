@@ -1,0 +1,17 @@
+wotr:processor_block_2
+wotr:processor_block_2_directional_pillar
+wotr:processor_block_2_slab
+wotr:processor_block_2_stairs
+wotr:processor_block_2_wall
+wotr:processor_block_2_button
+wotr:processor_block_2_pressure_plate
+wotr:processor_block_2_fence
+wotr:processor_block_2_fence_gate
+wotr:processor_block_2_glass_pane
+wotr:processor_block_2_door
+wotr:processor_block_2_trapdoor
+
+
+wotr:processor_block_6_directional_pillar
+wotr:processor_block_6_glass_pane
+wotr:processor_block_6_door
