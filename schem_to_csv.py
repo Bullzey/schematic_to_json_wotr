@@ -27,7 +27,8 @@ if unexpected_files:
 ignored_blocks = {
     "minecraft:air",
     "minecraft:void_air",
-    "minecraft:cave_air"
+    "minecraft:cave_air",
+    "minecraft:bedrock"
 }
 
 # === PROCESS ONLY EXPECTED FILES ===
