@@ -4,7 +4,7 @@ import json
 
 # === CONFIGURATION ===
 # Change the below theme for different folders with themes
-# Make sure the theme has all 8 processor schematics inside.
+# Make sure the theme has all 8 processor schematics inside. To discuss if this gets changed
 theme_name = "cave_theme"
 base_folder = os.path.dirname(os.path.abspath(__file__))
 weights_folder = os.path.join(base_folder, theme_name, "BlockWeights")
