@@ -7,7 +7,7 @@ from collections import defaultdict
 # === CONFIGURATION ===
 # This section will need some kind of interface to select the theme folder, but for now it is hardcoded.
 # The theme folder should contain the .schem files to be converted to CSV.
-theme_name = "mal_theme"  # Name of the folder containing your .schem files
+theme_name = "wout_theme"  # Name of the folder containing your .schem files
 base_folder = os.path.dirname(os.path.abspath(__file__))
 theme_folder = os.path.join(base_folder, theme_name)
 csv_output_folder = os.path.join(theme_folder, "Blockcsv")
@@ -18,11 +18,13 @@ output_json_path = os.path.join(base_folder, theme_name, f"{theme_name}.json")
 
 # Expected schematic files
 # Files should be named Processor1.schem, Processor2.schem, etc.
-expected_schems = {f"Processor{i}.schem" for i in range(1, 9)}
+expected_schems = {f"processor{i}.schem" for i in range(1, 9)}
 
 # === SETUP ===
-# Make sure the output directory exists
+# Make sure the directories exists
 os.makedirs(csv_output_folder, exist_ok=True)
+os.makedirs(csv_counts_folder, exist_ok=True)
+os.makedirs(csv_weights_folder, exist_ok=True)
 
 # Check for unexpected files in the theme folder, currently checking for 8 files, this could be changed if wanted.
 # If we want to change the amount of processor blocks we can change the expected_schems variable above.
@@ -31,13 +33,14 @@ all_files = {f for f in os.listdir(theme_folder) if os.path.isfile(os.path.join(
 unexpected = all_files - expected_schems
 
 # Tells you what files are in the theme folder that are not in the expected_schems set.
+# TODO: Fix as currently it's always printing this
 if unexpected:
     print("⚠️ Found unexpected files in the theme folder:")
     for filename in sorted(unexpected):
         print(f"  - {filename}")
     print()
 
-# Blocks we want to skip while exporting, currently the end block is bedrock.
+# Blocks we want to skip while exporting from schematic to csv, currently the end block of the template is bedrock.
 ignored_blocks = {
     "minecraft:air",
     "minecraft:void_air",
@@ -102,13 +105,8 @@ for schem_file in sorted(expected_schems):  # Keep output order consistent
                         writer.writerow([x, y, z, block_name])
 
                     index += 1
-
+    # This export gets used later down the line but is saved for sense checking if wanted. This can change to only be saved during run and no extra files to be saved
     print(f"✅ Exported: {os.path.relpath(output_path, base_folder)}")
-
-# This was csv_to_weighted.py, but it is now a part of the main script.
-
-os.makedirs(csv_counts_folder, exist_ok=True)
-os.makedirs(csv_weights_folder, exist_ok=True)
 
 # === HELPER: Convert counts to normalized weights summing to 1.0 ===
 def normalize_weights(counts: dict[str, int]) -> dict[str, float]:
@@ -216,12 +214,7 @@ for file in os.listdir(csv_output_folder):
     print(f"✅ Exported: {weights_csv}")
 
 
-# === CONFIGURATION ===
-# Change the below theme for different folders with themes
-# Make sure the theme has all 8 processor schematics inside. To discuss if this gets changed
-
 replacements = []
-
 # === PROCESS EACH BLOCK WEIGHT FILE ===
 for file in sorted(os.listdir(csv_weights_folder)):
     if not file.endswith("_blockWeights.csv"):
