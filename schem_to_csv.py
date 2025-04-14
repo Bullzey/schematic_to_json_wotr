@@ -1,45 +1,54 @@
 import os
 import csv
-from amulet_nbt import load
-from amulet_nbt import CompoundTag
+from amulet_nbt import load, CompoundTag
 
 # === CONFIGURATION ===
-theme_name = "cave_theme"  # Folder containing processor .schem files
-base_folder = os.path.dirname(os.path.abspath(__file__))  # Folder where this script is
-theme_folder = os.path.join(base_folder, theme_name)
-csv_output_folder = os.path.join(theme_folder, "CSV")
-expected_files = {f"Processor{i}.schem" for i in range(1, 9)}
+# This section will need some kind of interface to select the theme folder, but for now it is hardcoded.
+# The theme folder should contain the .schem files to be converted to CSV.
+theme_name = "cave_theme"  # Name of the folder containing your .schem files
+base_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of this script
+theme_dir = os.path.join(base_dir, theme_name)
+csv_output_dir = os.path.join(theme_dir, "CSV")
 
-# === CREATE OUTPUT FOLDER IF NEEDED ===
-os.makedirs(csv_output_folder, exist_ok=True)
+# Expected schematic files
+# Files should be named Processor1.schem, Processor2.schem, etc.
+expected_schems = {f"Processor{i}.schem" for i in range(1, 9)}
 
-# === WARNING FOR UNEXPECTED FILES ===
-all_files = {f for f in os.listdir(theme_folder) if os.path.isfile(os.path.join(theme_folder, f))}
-unexpected_files = all_files - expected_files
+# === SETUP ===
+# Make sure the output directory exists
+os.makedirs(csv_output_dir, exist_ok=True)
 
-if unexpected_files:
-    print("⚠️ WARNING: Unexpected files found in the folder:")
-    for file in unexpected_files:
-        print("  -", file)
+# Check for unexpected files in the theme folder, currently checking for 8 files, this could be changed if wanted.
+# If we want to change the amount of processor blocks we can change the expected_schems variable above.
+# This will check for any files that are not in the expected_schems set and print them out.
+all_files = {f for f in os.listdir(theme_dir) if os.path.isfile(os.path.join(theme_dir, f))}
+unexpected = all_files - expected_schems
+
+# Tells you what files are in the theme folder that are not in the expected_schems set.
+if unexpected:
+    print("⚠️ Found unexpected files in the theme folder:")
+    for filename in sorted(unexpected):
+        print(f"  - {filename}")
     print()
 
-# === BLOCKS TO IGNORE ===
+# Blocks we want to skip while exporting, currently the end block is bedrock.
 ignored_blocks = {
     "minecraft:air",
     "minecraft:void_air",
     "minecraft:cave_air",
-    "minecraft:bedrock"
+    "minecraft:bedrock",
 }
 
-# === PROCESS ONLY EXPECTED FILES ===
-for schem_file in sorted(expected_files):  # Sort for consistent order
-    input_path = os.path.join(theme_folder, schem_file)
-    output_csv = os.path.join(csv_output_folder, os.path.splitext(schem_file)[0] + ".csv")
+# === PROCESS SCHEMATIC FILES ===
+for schem_file in sorted(expected_schems):  # Keep output order consistent
+    input_path = os.path.join(theme_dir, schem_file)
+    output_path = os.path.join(csv_output_dir, os.path.splitext(schem_file)[0] + ".csv")
 
     if not os.path.exists(input_path):
-        print(f"❌ Missing file: {schem_file}")
+        print(f"❌ Missing expected file: {schem_file}")
         continue
 
+    # Load the schematic's NBT data
     nbt = load(input_path)
     compound: CompoundTag = nbt.compound
 
@@ -49,22 +58,25 @@ for schem_file in sorted(expected_files):  # Sort for consistent order
 
     palette = compound["Palette"]
     block_data = compound["BlockData"].py_data
-    id_to_block = {v.py_data: k.split("[")[0] for k, v in palette.items()}
 
-    with open(output_csv, "w", newline="") as f:
-        writer = csv.writer(f)
+    # Map palette index to block name (ignore properties like [facing=north])
+    palette_lookup = {v.py_data: k.split("[")[0] for k, v in palette.items()}
+
+    # Write block data to a CSV file
+    with open(output_path, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
         writer.writerow(["Depth", "Height", "Column", "Block"])
 
         index = 0
         for y in range(height):
             for z in range(length):
                 for x in range(width):
-                    palette_index = block_data[index]
-                    block_name = id_to_block.get(palette_index, "unknown")
+                    block_index = block_data[index]
+                    block_name = palette_lookup.get(block_index, "unknown")
 
                     if block_name not in ignored_blocks:
                         writer.writerow([x, y, z, block_name])
 
                     index += 1
 
-    print(f"✅ Exported: {os.path.relpath(output_csv, base_folder)}")
+    print(f"✅ Exported: {os.path.relpath(output_path, base_dir)}")
