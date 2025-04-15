@@ -19,6 +19,8 @@ output_json_path = os.path.join(base_folder, theme_name, f"{theme_name}.json")
 # Expected schematic files
 # Files should be named Processor1.schem, Processor2.schem, etc.
 expected_schems = {f"processor{i}.schem" for i in range(1, 9)}
+optional_schems = {f"processor{i}.schem" for i in range(9, 16)}
+all_schems = sorted(expected_schems | optional_schems)
 
 # === SETUP ===
 # Make sure the directories exists
@@ -67,12 +69,13 @@ column_suffixes = [
 ]
 
 # === PROCESS SCHEMATIC FILES ===
-for schem_file in sorted(expected_schems):  # Keep output order consistent
+for schem_file in all_schems:  # Keep output order consistent
     input_path = os.path.join(theme_folder, schem_file)
     output_path = os.path.join(csv_output_folder, os.path.splitext(schem_file)[0] + ".csv")
 
     if not os.path.exists(input_path):
-        print(f"❌ Missing expected file: {schem_file}")
+        if schem_file in expected_schems:
+            print(f"❌ Missing required file: {schem_file}")
         continue
 
     # Load the schematic's NBT data
