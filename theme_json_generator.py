@@ -273,8 +273,8 @@ def process_schematics(theme_folder, csv_output_folder, csv_counts_folder, csv_w
         "_pressure_plate",
         "_fence",
         "_fence_gate",
-        "_glass_pane",
         "_glass",
+        "_glass_pane",
         "_trapdoor"
     ]
 

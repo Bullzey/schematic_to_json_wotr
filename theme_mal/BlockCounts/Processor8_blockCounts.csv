@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockCounts
+0,wotr:processor_block_8,"{""minecraft:rooted_dirt"": 1, ""minecraft:light_gray_terracotta"": 2, ""minecraft:stripped_jungle_wood"": 1, ""minecraft:dripstone_block"": 2}"
+1,wotr:processor_block_8_directional_pillar,"{""minecraft:stripped_jungle_wood"": 1}"
+2,wotr:processor_block_8_slab,"{""minecraft:jungle_slab"": 1}"
+3,wotr:processor_block_8_stairs,"{""minecraft:jungle_stairs"": 1, ""minecraft:granite_stairs"": 1}"
+4,wotr:processor_block_8_wall,"{""minecraft:mud_brick_wall"": 1}"
+5,wotr:processor_block_8_button,"{""minecraft:jungle_button"": 1}"
+6,wotr:processor_block_8_pressure_plate,"{""minecraft:jungle_pressure_plate"": 1}"
+7,wotr:processor_block_8_fence,"{""minecraft:jungle_fence"": 1}"
+8,wotr:processor_block_8_fence_gate,"{""minecraft:jungle_fence_gate"": 1}"
+9,wotr:processor_block_8_glass,"{""minecraft:brown_stained_glass"": 1}"
+10,wotr:processor_block_8_glass_pane,"{""minecraft:iron_bars"": 1}"
+11,wotr:processor_block_8_trapdoor,"{""minecraft:jungle_trapdoor"": 1}"
