@@ -1,11 +1,3 @@
-# Import necessary libraries
-# os: for file and directory operations
-# csv: for reading and writing CSV files
-# json: for handling JSON data
-# amulet_nbt: for reading .schem files
-# tkinter: for creating GUI popups
-# sys: for exiting the script
-
 import os
 import csv
 import json
@@ -75,8 +67,30 @@ def show_checklist_popup(target):
     checklist_window = tk.Toplevel()
     checklist_window.title("Select Features & Set Processor")
 
+    # Initialize entry_dict at the start of the function
+    entry_dict = {}
+
     # "Processor" header
     tk.Label(checklist_window, text="Processors", font=("Arial", 12, "bold")).grid(row=0, columnspan=2, pady=10)
+
+    # Add input fields for mandatory items before the mushrooms without checkboxes
+    mandatory_items = {
+        "noise_scale_x": 0.075,
+        "noise_scale_y": 0.075,
+        "noise_scale_z": 0.075
+    }
+
+    # Add labels and input fields for mandatory items
+    row_offset = 1  # Start after the "Processors" header
+    for i, (key, default_value) in enumerate(mandatory_items.items()):
+        tk.Label(checklist_window, text=key, font=("Arial", 10, "bold")).grid(row=row_offset + i, column=0, sticky="w")
+        entry = tk.Entry(checklist_window, width=5)
+        entry.insert(0, str(default_value))
+        entry.grid(row=row_offset + i, column=1, padx=5)
+        entry_dict[key] = entry
+
+    # Adjust the row_offset for the mushrooms and vines to follow the mandatory items
+    row_offset += len(mandatory_items)  # Correctly position after mandatory items
 
     # Define options based on target
     options = ["mushroom", "vines"] if target == "room" else ["chest"]
@@ -89,10 +103,9 @@ def show_checklist_popup(target):
     }
 
     var_dict = {}
-    entry_dict = {}
 
     # "Rarity" label
-    tk.Label(checklist_window, text="Rarity", font=("Arial", 10, "bold")).grid(row=1, column=1, pady=5)
+    tk.Label(checklist_window, text="Rarity", font=("Arial", 10, "bold")).grid(row=row_offset, column=1, pady=5)
 
     # Create checkboxes and input fields for each option
     for i, option in enumerate(options):
@@ -101,21 +114,23 @@ def show_checklist_popup(target):
         entry.insert(0, str(default_values.get(option, "")))  # Set default value
 
         # Create checkboxes for each option
-        tk.Checkbutton(checklist_window, text=option, variable=var).grid(row=i + 2, column=0, sticky="w")
+        tk.Checkbutton(checklist_window, text=option, variable=var).grid(row=row_offset + i + 1, column=0, sticky="w")
 
         # Create input fields for rarity values next to each checkbox
-        entry.grid(row=i + 2, column=1, padx=5)
+        entry.grid(row=row_offset + i + 1, column=1, padx=5)
 
         var_dict[option] = var
         entry_dict[option] = entry
 
-    # Default value for row_offset
-    row_offset = len(options) + 2  # If target is not "room", this will be used
+    row_offset += len(options) + 1  # row_offset is now the row *after* the last option element
 
     # If target is "room", replace cobweb checkbox and input box with an "Attachment" section
     if target == "room":
+        # Add spacing before the attachment section
+        row_offset += 1  # Increment row_offset to create space
+
         # Add the "Attachment" header and center it
-        tk.Label(checklist_window, text="Attachments", font=("Arial", 12, "bold")).grid(row=row_offset, columnspan=5, pady=10)
+        tk.Label(checklist_window, text="Attachments", font=("Arial", 12, "bold")).grid(row=row_offset, columnspan=9, pady=10)
 
         # Move down by one row to make space for the "Rarity" label
         row_offset += 1
@@ -191,6 +206,13 @@ def show_checklist_popup(target):
                 except ValueError:
                     selected_options[opt] = None  # Keep it empty if invalid
 
+        # Include mandatory items
+        for key in mandatory_items:
+            try:
+                selected_options[key] = float(entry_dict[key].get())
+            except ValueError:
+                selected_options[key] = mandatory_items[key]  # Use default if invalid
+
         # If "room" is selected, also add attachment details
         if target == "room":
             attachment_data = []
@@ -211,13 +233,23 @@ def show_checklist_popup(target):
         checklist_window.selected_options = selected_options
         checklist_window.destroy()
 
+    # Determine the row for the submit button
+    submit_button_actual_row = row_offset # Default if not 'room' and no attachments
+    submit_button_column_span = 2 # Default for mandatory/options items
+
+    if target == "room":
+        # If attachments were added, row_offset was updated internally.
+        # The last attachment entry is at (row_offset + 1 + 10)
+        # So, submit button is at row_offset + 12
+        submit_button_actual_row = row_offset + 12 # Accounts for 11 entry rows + header
+        submit_button_column_span = 9 # To span across attachment columns
+
     submit_button = tk.Button(checklist_window, text="OK", command=submit)
-    submit_button.grid(row=row_offset + 12, columnspan=8, pady=10)
+    submit_button.grid(row=submit_button_actual_row, columnspan=submit_button_column_span, pady=10)
 
     checklist_window.selected_options = None
     checklist_window.wait_window()
     return checklist_window.selected_options
-
 # Function: normalize_weights
 # Purpose: Normalizes block counts into weights that sum to 1.0
 # Input: Dictionary of block counts
@@ -447,6 +479,8 @@ def process_csv_to_json(csv_file_path, json_file_path):
     csv_weights_folder = os.path.join(theme_folder, "BlockWeights")
 
     processor_replacements = process_schematics(theme_folder, csv_output_folder, csv_counts_folder, csv_weights_folder)
+    
+    
 
     # Additional logic from theme_json_generator
     selected_features = show_checklist_popup(target)
@@ -497,7 +531,11 @@ def process_csv_to_json(csv_file_path, json_file_path):
             "processors": [
                 {
                     "processor_type": "wotr:spot_gradient",
-                    "replacements": processor_replacements
+                    "noise_scale_x": selected_features.get("noise_scale_x", 0.075),
+                    "noise_scale_y": selected_features.get("noise_scale_y", 0.075),
+                    "noise_scale_z": selected_features.get("noise_scale_z", 0.075),
+                    "replacements": processor_replacements,
+                    
                 },
                 *endnote
             ]

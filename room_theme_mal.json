@@ -2,6 +2,9 @@
     "processors": [
         {
             "processor_type": "wotr:spot_gradient",
+            "noise_scale_x": 0.075,
+            "noise_scale_y": 0.075,
+            "noise_scale_z": 0.075,
             "replacements": [
                 {
                     "input_state": "wotr:processor_block_1",
@@ -25,11 +28,19 @@
                     "output_steps": [
                         {
                             "output_state": "minecraft:polished_basalt",
-                            "step_size": 0.5
+                            "step_size": 0.25
                         },
                         {
                             "output_state": "minecraft:deepslate",
-                            "step_size": 0.5
+                            "step_size": 0.25
+                        },
+                        {
+                            "output_state": "minecraft:water",
+                            "step_size": 0.25
+                        },
+                        {
+                            "output_state": "minecraft:cobblestone",
+                            "step_size": 0.25
                         }
                     ]
                 },
@@ -1076,10 +1087,6 @@
         {
             "processor_type": "wotr:mushrooms",
             "rarity": 0.05
-        },
-        {
-            "processor_type": "wotr:vines",
-            "rarity": 0.2
         }
     ]
 }

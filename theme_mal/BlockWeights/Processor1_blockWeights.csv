@@ -1,6 +1,6 @@
 Column,ProcessorType,BlockWeights
 0,wotr:processor_block_1,"{""minecraft:stone"": 0.286, ""minecraft:andesite"": 0.286, ""minecraft:cobblestone"": 0.428}"
-1,wotr:processor_block_1_directional_pillar,"{""minecraft:polished_basalt"": 0.5, ""minecraft:deepslate"": 0.5}"
+1,wotr:processor_block_1_directional_pillar,"{""minecraft:polished_basalt"": 0.25, ""minecraft:deepslate"": 0.25, ""minecraft:water"": 0.25, ""minecraft:cobblestone"": 0.25}"
 2,wotr:processor_block_1_slab,"{""minecraft:stone_slab"": 0.333, ""minecraft:andesite_slab"": 0.334, ""minecraft:cobblestone_slab"": 0.333}"
 3,wotr:processor_block_1_stairs,"{""minecraft:stone_stairs"": 0.333, ""minecraft:andesite_stairs"": 0.334, ""minecraft:cobblestone_stairs"": 0.333}"
 4,wotr:processor_block_1_wall,"{""minecraft:stone_brick_wall"": 0.333, ""minecraft:andesite_wall"": 0.334, ""minecraft:mossy_cobblestone_wall"": 0.333}"

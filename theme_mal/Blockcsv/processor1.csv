@@ -6,6 +6,8 @@ Depth,Height,Column,Block
 0,0,1,wotr:processor_block_1_directional_pillar
 1,0,1,minecraft:polished_basalt
 2,0,1,minecraft:deepslate
+3,0,1,minecraft:water
+4,0,1,minecraft:cobblestone
 0,0,2,wotr:processor_block_1_slab
 1,0,2,minecraft:stone_slab
 2,0,2,minecraft:andesite_slab
