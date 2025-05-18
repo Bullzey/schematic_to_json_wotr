@@ -7,8 +7,12 @@ import tkinter as tk
 from tkinter import simpledialog, filedialog
 import sys
 
-# Define the base folder as the directory where this script is located
-base_folder = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, 'frozen', False):
+    # Running as a PyInstaller bundle
+    base_folder = os.path.dirname(sys.executable)
+else:
+    # Running as a normal script
+    base_folder = os.path.dirname(os.path.abspath(__file__))
 
 # Function: select_theme_and_target
 # Purpose: Creates a GUI popup to select a theme folder and a target (Room or POI)
