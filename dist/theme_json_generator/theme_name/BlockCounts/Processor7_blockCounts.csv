@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockCounts
+0,wotr:processor_block_7,"{""minecraft:deepslate_bricks"": 1, ""minecraft:cracked_stone_bricks"": 2, ""minecraft:cracked_deepslate_bricks"": 1, ""minecraft:deepslate_tiles"": 1}"
+1,wotr:processor_block_7_directional_pillar,"{""minecraft:polished_basalt"": 2, ""minecraft:deepslate"": 1}"
+2,wotr:processor_block_7_slab,"{""minecraft:deepslate_brick_slab"": 1}"
+3,wotr:processor_block_7_stairs,"{""minecraft:deepslate_brick_stairs"": 1}"
+4,wotr:processor_block_7_wall,"{""minecraft:deepslate_brick_wall"": 1, ""minecraft:cobbled_deepslate_wall"": 1, ""minecraft:stone_brick_wall"": 1}"
+5,wotr:processor_block_7_button,"{""minecraft:stone_button"": 1}"
+6,wotr:processor_block_7_pressure_plate,"{""minecraft:stone_pressure_plate"": 1}"
+7,wotr:processor_block_7_fence,"{""minecraft:pale_oak_fence"": 1}"
+8,wotr:processor_block_7_fence_gate,"{""minecraft:pale_oak_fence_gate"": 1}"
+9,wotr:processor_block_7_glass,"{""minecraft:glass"": 1}"
+10,wotr:processor_block_7_glass_pane,"{""minecraft:iron_bars"": 1}"
+11,wotr:processor_block_7_trapdoor,"{""minecraft:waxed_weathered_copper_trapdoor"": 1}"

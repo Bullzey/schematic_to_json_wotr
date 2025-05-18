@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockCounts
+0,wotr:processor_block_2,"{""minecraft:brown_mushroom_block"": 1, ""minecraft:packed_mud"": 3, ""minecraft:granite"": 2, ""minecraft:mud_bricks"": 1}"
+1,wotr:processor_block_2_directional_pillar,"{""minecraft:stripped_jungle_log"": 1}"
+2,wotr:processor_block_2_slab,"{""minecraft:mud_brick_slab"": 1, ""minecraft:jungle_slab"": 1, ""minecraft:granite_slab"": 1}"
+3,wotr:processor_block_2_stairs,"{""minecraft:mud_brick_stairs"": 1, ""minecraft:jungle_stairs"": 1}"
+4,wotr:processor_block_2_wall,"{""minecraft:mud_brick_wall"": 1}"
+5,wotr:processor_block_2_button,"{""minecraft:acacia_button"": 1}"
+6,wotr:processor_block_2_pressure_plate,"{""minecraft:acacia_pressure_plate"": 1}"
+7,wotr:processor_block_2_fence,"{""minecraft:acacia_fence"": 1}"
+8,wotr:processor_block_2_fence_gate,"{""minecraft:acacia_fence_gate"": 1}"
+9,wotr:processor_block_2_glass,"{""minecraft:brown_stained_glass"": 1}"
+10,wotr:processor_block_2_glass_pane,"{""minecraft:iron_bars"": 1}"
+11,wotr:processor_block_2_trapdoor,"{""minecraft:oak_trapdoor"": 1}"

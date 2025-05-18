@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockCounts
+0,wotr:processor_block_5,"{""minecraft:cobbled_deepslate"": 1, ""minecraft:mud"": 2, ""minecraft:muddy_mangrove_roots"": 2, ""minecraft:jungle_wood"": 1, ""minecraft:stripped_spruce_wood"": 1}"
+1,wotr:processor_block_5_directional_pillar,"{""minecraft:jungle_wood"": 1, ""minecraft:muddy_mangrove_roots"": 1}"
+2,wotr:processor_block_5_slab,"{""minecraft:cobbled_deepslate_slab"": 1, ""minecraft:tuff_slab"": 1}"
+3,wotr:processor_block_5_stairs,"{""minecraft:cobbled_deepslate_stairs"": 1, ""minecraft:tuff_stairs"": 1}"
+4,wotr:processor_block_5_wall,"{""minecraft:cobbled_deepslate_wall"": 1, ""minecraft:tuff_wall"": 1}"
+5,wotr:processor_block_5_button,"{""minecraft:dark_oak_button"": 1}"
+6,wotr:processor_block_5_pressure_plate,"{""minecraft:dark_oak_pressure_plate"": 1}"
+7,wotr:processor_block_5_fence,"{""minecraft:dark_oak_fence"": 1}"
+8,wotr:processor_block_5_fence_gate,"{""minecraft:dark_oak_fence_gate"": 1}"
+9,wotr:processor_block_5_glass,"{""minecraft:brown_stained_glass"": 1}"
+10,wotr:processor_block_5_glass_pane,"{""minecraft:iron_bars"": 1}"
+11,wotr:processor_block_5_trapdoor,"{""minecraft:dark_oak_trapdoor"": 1}"

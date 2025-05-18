@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockWeights
+0,wotr:processor_block_1,"{""minecraft:stone"": 0.286, ""minecraft:andesite"": 0.286, ""minecraft:cobblestone"": 0.428}"
+1,wotr:processor_block_1_directional_pillar,"{""minecraft:polished_basalt"": 0.25, ""minecraft:deepslate"": 0.25, ""minecraft:water"": 0.25, ""minecraft:cobblestone"": 0.25}"
+2,wotr:processor_block_1_slab,"{""minecraft:stone_slab"": 0.333, ""minecraft:andesite_slab"": 0.334, ""minecraft:cobblestone_slab"": 0.333}"
+3,wotr:processor_block_1_stairs,"{""minecraft:stone_stairs"": 0.333, ""minecraft:andesite_stairs"": 0.334, ""minecraft:cobblestone_stairs"": 0.333}"
+4,wotr:processor_block_1_wall,"{""minecraft:stone_brick_wall"": 0.333, ""minecraft:andesite_wall"": 0.334, ""minecraft:mossy_cobblestone_wall"": 0.333}"
+5,wotr:processor_block_1_button,"{""minecraft:pale_oak_fence"": 1.0}"
+6,wotr:processor_block_1_pressure_plate,"{""minecraft:pale_oak_pressure_plate"": 1.0}"
+7,wotr:processor_block_1_fence,"{""minecraft:pale_oak_fence"": 1.0}"
+8,wotr:processor_block_1_fence_gate,"{""minecraft:pale_oak_fence_gate"": 1.0}"
+9,wotr:processor_block_1_glass,"{""minecraft:light_gray_stained_glass"": 1.0}"
+10,wotr:processor_block_1_glass_pane,"{""minecraft:iron_bars"": 1.0}"
+11,wotr:processor_block_1_trapdoor,"{""minecraft:pale_oak_trapdoor"": 1.0}"

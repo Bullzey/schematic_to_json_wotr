@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockWeights
+0,wotr:processor_block_3,"{""minecraft:cobblestone"": 0.1, ""minecraft:cracked_stone_bricks"": 0.2, ""minecraft:rooted_dirt"": 0.3, ""minecraft:dripstone_block"": 0.2, ""minecraft:stone"": 0.2}"
+1,wotr:processor_block_3_directional_pillar,"{""minecraft:stripped_jungle_log"": 0.5, ""minecraft:stripped_jungle_wood"": 0.5}"
+2,wotr:processor_block_3_slab,"{""minecraft:cobblestone_slab"": 0.5, ""minecraft:stone_slab"": 0.5}"
+3,wotr:processor_block_3_stairs,"{""minecraft:cobblestone_stairs"": 0.5, ""minecraft:stone_stairs"": 0.5}"
+4,wotr:processor_block_3_wall,"{""minecraft:cobblestone_wall"": 1.0}"
+5,wotr:processor_block_3_button,"{""minecraft:jungle_button"": 1.0}"
+6,wotr:processor_block_3_pressure_plate,"{""minecraft:jungle_pressure_plate"": 1.0}"
+7,wotr:processor_block_3_fence,"{""minecraft:jungle_fence"": 1.0}"
+8,wotr:processor_block_3_fence_gate,"{""minecraft:jungle_fence_gate"": 1.0}"
+9,wotr:processor_block_3_glass,"{""minecraft:light_gray_stained_glass"": 1.0}"
+10,wotr:processor_block_3_glass_pane,"{""minecraft:iron_bars"": 1.0}"
+11,wotr:processor_block_3_trapdoor,"{""minecraft:jungle_trapdoor"": 1.0}"

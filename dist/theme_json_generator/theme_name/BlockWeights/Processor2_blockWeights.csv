@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockWeights
+0,wotr:processor_block_2,"{""minecraft:brown_mushroom_block"": 0.143, ""minecraft:packed_mud"": 0.428, ""minecraft:granite"": 0.286, ""minecraft:mud_bricks"": 0.143}"
+1,wotr:processor_block_2_directional_pillar,"{""minecraft:stripped_jungle_log"": 1.0}"
+2,wotr:processor_block_2_slab,"{""minecraft:mud_brick_slab"": 0.333, ""minecraft:jungle_slab"": 0.333, ""minecraft:granite_slab"": 0.334}"
+3,wotr:processor_block_2_stairs,"{""minecraft:mud_brick_stairs"": 0.5, ""minecraft:jungle_stairs"": 0.5}"
+4,wotr:processor_block_2_wall,"{""minecraft:mud_brick_wall"": 1.0}"
+5,wotr:processor_block_2_button,"{""minecraft:acacia_button"": 1.0}"
+6,wotr:processor_block_2_pressure_plate,"{""minecraft:acacia_pressure_plate"": 1.0}"
+7,wotr:processor_block_2_fence,"{""minecraft:acacia_fence"": 1.0}"
+8,wotr:processor_block_2_fence_gate,"{""minecraft:acacia_fence_gate"": 1.0}"
+9,wotr:processor_block_2_glass,"{""minecraft:brown_stained_glass"": 1.0}"
+10,wotr:processor_block_2_glass_pane,"{""minecraft:iron_bars"": 1.0}"
+11,wotr:processor_block_2_trapdoor,"{""minecraft:oak_trapdoor"": 1.0}"

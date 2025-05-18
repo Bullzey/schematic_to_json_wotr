@@ -1,0 +1,13 @@
+Column,ProcessorType,BlockWeights
+0,wotr:processor_block_6,"{""minecraft:oak_planks"": 0.5, ""minecraft:spruce_planks"": 0.5}"
+1,wotr:processor_block_6_directional_pillar,"{""minecraft:stripped_oak_wood"": 1.0}"
+2,wotr:processor_block_6_slab,"{""minecraft:oak_slab"": 0.5, ""minecraft:spruce_slab"": 0.5}"
+3,wotr:processor_block_6_stairs,"{""minecraft:oak_stairs"": 0.5, ""minecraft:spruce_stairs"": 0.5}"
+4,wotr:processor_block_6_wall,"{""minecraft:cobblestone_wall"": 1.0}"
+5,wotr:processor_block_6_button,"{""minecraft:oak_button"": 0.5, ""minecraft:spruce_button"": 0.5}"
+6,wotr:processor_block_6_pressure_plate,"{""minecraft:oak_pressure_plate"": 0.5, ""minecraft:spruce_pressure_plate"": 0.5}"
+7,wotr:processor_block_6_fence,"{""minecraft:oak_fence"": 0.5, ""minecraft:spruce_fence"": 0.5}"
+8,wotr:processor_block_6_fence_gate,"{""minecraft:oak_fence_gate"": 1.0}"
+9,wotr:processor_block_6_glass,"{""minecraft:glass"": 1.0}"
+10,wotr:processor_block_6_glass_pane,"{""minecraft:iron_bars"": 1.0}"
+11,wotr:processor_block_6_trapdoor,"{""minecraft:oak_trapdoor"": 0.5, ""minecraft:spruce_trapdoor"": 0.5}"
